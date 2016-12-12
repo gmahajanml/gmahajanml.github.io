@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
-
-<div class="posts">
+<div id="research-description" class="row">
+  <div class="col-md-12"> 
+    My primary research area is static analysis of higher-order programs.
+    My broader interests include language design, compiler implementation, security, program optimization, parallelism and program verification.
+  </div>
+</div>
+<hr>
+<div id="posts">
   {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
+  <div class="row">
+    <div class="col-md-12 post">
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+    </div>
+  </div>
+  <hr>
   {% endfor %}
 </div>

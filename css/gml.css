@@ -1,0 +1,39 @@
+.gml-body{
+  background-color:#dddddd;
+  font-family:Georgia;
+  color:#333333;
+  padding:20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gml-container{
+  background:white;
+  padding: 20px 40px 40px;
+  margin: 0px auto auto 20px;
+  box-shadow: 0 5px 5px #333333;
+  border-radius: 9px;
+}
+
+#header{
+  padding-bottom: 20px; 
+}
+
+#name-area{
+  float: left;
+}
+
+#name{
+  font-size: 27px;
+  font-weight: bold;
+}
+
+#title{
+  visible: false;
+  font-size: 27px;
+}
+
+hr { 
+    border-width: 1px;
+    border-style: inset;
+}
