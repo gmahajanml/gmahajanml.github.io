@@ -1,0 +1,85 @@
+.gml-body{
+  background-color:#dddddd;
+  font-family:Georgia;
+  color:#333333;
+  padding:20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.gml-container{
+  background:white;
+  padding: 20px 40px 40px;
+  margin: 0px auto auto 20px;
+  box-shadow: 0 5px 5px #333333;
+  border-radius: 9px;
+}
+
+#header{
+  padding-bottom: 20px; 
+}
+
+.pic-container{
+ padding: 0px 0px 0px 0px;
+ height: 205px;
+ width: 232px;
+ margin: 0px 20px 20px 20px;
+}
+
+#name-area{
+  float: left;
+}
+
+#name{
+font-size: 35px;
+  font-weight: bold;
+}
+
+.name-sub{
+ font-size: 27px;
+}
+
+#nav-bar{
+padding-top:20px;
+text-align: center;
+}
+
+#nav-bar ul{
+ list-style: none;
+ margin: auto;
+ padding: 0;
+}
+
+#nav-bar li{
+ display: inline;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h1{
+  margin-top: 0px;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+h2{
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h3{
+  margin: 0px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#title{
+  visible: false;
+  font-size: 27px;
+}
+
+hr { 
+    border-width: 1px;
+    border-style: inset;
+}

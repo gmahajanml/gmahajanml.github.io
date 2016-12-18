@@ -1,7 +1,7 @@
 ---
-layout: about
-title: About
-permalink: /about/
+layout: bio
+title: Bio
+permalink: /bio/
 ---
 
 I am software developer at Microsoft who is passionate about Machine Learning. 
