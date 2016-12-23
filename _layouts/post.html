@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article>
+<div>
 	<div>
 		{{ content }}
 	</div>
@@ -11,4 +11,11 @@ layout: default
 		Written on {{ page.date | date: "%B %e, %Y" }}
 	</div>
 	{% include disqus.html %}
-</article>
+</div>
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/highlight-style.css">
+
+{% if page.math %}
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}

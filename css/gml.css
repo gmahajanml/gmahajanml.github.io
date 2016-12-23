@@ -16,7 +16,7 @@
 }
 
 #header{
-  padding-bottom: 20px; 
+  padding-bottom: 10px;
 }
 
 .pic-container{
@@ -31,7 +31,7 @@
 }
 
 #name{
-font-size: 35px;
+  font-size: 35px;
   font-weight: bold;
 }
 
@@ -40,8 +40,8 @@ font-size: 35px;
 }
 
 #nav-bar{
-padding-top:20px;
-text-align: center;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 #nav-bar ul{
@@ -52,24 +52,21 @@ text-align: center;
 
 #nav-bar li{
  display: inline;
-  font-size: 18px;
-  font-weight: bold;
+ font-size: 18px;
+ font-weight: bold;
 }
 
 h1{
-  margin-top: 0px;
   font-size: 27px;
   font-weight: bold;
 }
 
 h2{
-  margin-top: 0px;
   font-size: 20px;
   font-weight: bold;
 }
 
 h3{
-  margin: 0px;
   font-size: 17px;
   font-weight: bold;
 }
@@ -80,6 +77,6 @@ h3{
 }
 
 hr { 
-    border-width: 1px;
-    border-style: inset;
+  border-width: 1px;
+  border-style: inset;
 }
