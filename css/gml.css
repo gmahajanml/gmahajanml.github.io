@@ -1,3 +1,7 @@
+html, body {
+    font-size: 16px;
+}
+
 .gml-body{
   background-color:#dddddd;
   font-family:Georgia;
@@ -5,6 +9,8 @@
   padding:20px;
   max-width: 700px;
   margin: auto;
+  font-size: 1.000em;
+  line-height: 1.618em;
 }
 
 .gml-container{
@@ -16,7 +22,7 @@
 }
 
 #header{
-  padding-bottom: 10px;
+  padding-bottom: 1em;
 }
 
 .pic-container{
@@ -31,16 +37,18 @@
 }
 
 #name{
-  font-size: 35px;
+  font-size: 2.188em;
   font-weight: bold;
+  line-height: 1.45em;
 }
 
 .name-sub{
- font-size: 27px;
+ font-size: 1.688em;
+ line-height: 1.45em;
 }
 
 #nav-bar{
-  padding-bottom: 20px;
+  padding-bottom: 1em;
   text-align: center;
 }
 
@@ -50,25 +58,45 @@
  padding: 0;
 }
 
+a:link {
+    color: #0000FF;
+}
+
+a:visited {
+    color: #0000FF;
+}
+
+a:hover {
+    color: #0000FF;
+}
+
+a:active {
+    color: #0000FF;
+}
+
 #nav-bar li{
  display: inline;
- font-size: 18px;
+ font-size: 1.250em;
  font-weight: bold;
+ line-height:1.294em;
 }
 
 h1{
-  font-size: 27px;
+  font-size: 1.688em;
   font-weight: bold;
+  line-height: 0.958em;
 }
 
 h2{
-  font-size: 20px;
+  font-size: 1.250em;
   font-weight: bold;
+  line-height:1.294em;
 }
 
 h3{
-  font-size: 17px;
+  font-size: 1em;
   font-weight: bold;
+  line-height: 1.618em;
 }
 
 #title{
