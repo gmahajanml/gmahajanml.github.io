@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Least Squares and Nearest Neighbors
-categories: ['Technical']
+categories: ['Automated Reasoning']
 tags: ['ml', 'regression']
 math: true
 ---
@@ -62,26 +62,26 @@ X_neg = mvnrnd(mu_neg,sigma,100);
 [GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
-    <div class="col-md-6">
-      <div class="thumbnail">
-        <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1.png" target="_blank">
-          <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1.png">
-          <div class="caption" style="text-align: center;">
-            <p>Training Data for Scenario 1</p>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1.png">
+        <div class="caption" style="text-align: center;">
+          <p>Training Data for Scenario 1</p>
         </div>
-    </a>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="thumbnail">
-    <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2.png" target="_blank">
-      <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2.png">
-      <div class="caption" style="text-align: center;">
-        <p>Training Data for Scenario 2</p>
+      </a>
     </div>
-</a>
-</div>
-</div>
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2.png">
+        <div class="caption" style="text-align: center;">
+          <p>Training Data for Scenario 2</p>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 ### Least Squares
@@ -96,26 +96,26 @@ param = inv(transpose(X)*X)*transpose(X)*Y;
 [GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
-    <div class="col-md-6">
-      <div class="thumbnail">
-        <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1_linear.png" target="_blank">
-          <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1_linear.png">
-          <div class="caption" style="text-align: center;">
-            <p>Linear Squares on Scenario 1</p>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1_linear.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1_linear.png">
+        <div class="caption" style="text-align: center;">
+          <p>Linear Squares on Scenario 1</p>
         </div>
-    </a>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="thumbnail">
-    <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2_linear.png" target="_blank">
-      <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2_linear.png">
-      <div class="caption" style="text-align: center;">
-        <p>Linear Squares on Scenario 2</p>
+      </a>
     </div>
-</a>
-</div>
-</div>
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2_linear.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2_linear.png">
+        <div class="caption" style="text-align: center;">
+          <p>Linear Squares on Scenario 2</p>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 
@@ -132,16 +132,16 @@ m = linspace(-10, 10, 100);
 N = length(X1(:));
 classes = zeros(size(X1));
 for i = 1:N
-    this = [X1(i) X2(i)];
-    dists = sum((X - repmat(this,M,1)).^2,2);
-    [d I] = sort(dists,'ascend');
-    neighbors = Y(I(1:10));
-    prediction = sum(neighbors);
-    if prediction>0
-        classes(i)=1;
-    else
-        classes(i)=-1;
-    end
+this = [X1(i) X2(i)];
+dists = sum((X - repmat(this,M,1)).^2,2);
+[d I] = sort(dists,'ascend');
+neighbors = Y(I(1:10));
+prediction = sum(neighbors);
+if prediction>0
+classes(i)=1;
+else
+classes(i)=-1;
+end
 end
 contour(l,m,classes,[1,1]);
 {% endhighlight %}
@@ -149,26 +149,26 @@ contour(l,m,classes,[1,1]);
 [GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
-    <div class="col-md-6">
-      <div class="thumbnail">
-        <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1_nearest.png" target="_blank">
-          <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1_nearest.png">
-          <div class="caption" style="text-align: center;">
-            <p>Nearest Neighbors on Scenario 1</p>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio1_nearest.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio1_nearest.png">
+        <div class="caption" style="text-align: center;">
+          <p>Nearest Neighbors on Scenario 1</p>
         </div>
-    </a>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="thumbnail">
-    <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2_nearest.png" target="_blank">
-      <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2_nearest.png">
-      <div class="caption" style="text-align: center;">
-        <p>Nearest Neighbors on Scenario 2</p>
+      </a>
     </div>
-</a>
-</div>
-</div>
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <a href="{{ site.baseurl }}/images/linear_nearest/scenerio2_nearest.png" target="_blank">
+        <img src = "{{ site.baseurl }}/images/linear_nearest/scenerio2_nearest.png">
+        <div class="caption" style="text-align: center;">
+          <p>Nearest Neighbors on Scenario 2</p>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 ## Statistical Decision Theory
@@ -192,8 +192,8 @@ The nearest-neighbor methods attempt to directly implement this recipe using the
 where \\("Ave"\\) denotes average, and \\(N_k(x)\\) is the neighborhood
 containing the \\(k\\) points in \\(T\\) closest to \\(x\\). Two approximations are happening here:
 <ul>
-    <li>expectation is approximated by averaging over sample data;</li>
-    <li>conditioning at a point is related to conditioning on some region "close" to the target point</li>
+  <li>expectation is approximated by averaging over sample data;</li>
+  <li>conditioning at a point is related to conditioning on some region "close" to the target point</li>
 </ul>  
 
 How does linear regression fit into this framework? The simplest explanation is that one assumes that the regression function \\(f(x)\\) is approximately linear in its arguments: \\[f(x) \approx x^T\beta\\]
@@ -205,13 +205,13 @@ So both \\(k\\)-nearest neighbors and least squares end up approximating
 conditional expectations by averages. But they differ dramatically in terms
 of model assumptions:
 <ul>
-    <li>  
-        Least squares assumes f(x) is well approximated by a globally linear
-        function.  
-    </li>
-    <li>
-        k-nearest neighbors assumes f(x) is well approximated by a locally constant function.
-    </li>
+  <li>  
+    Least squares assumes f(x) is well approximated by a globally linear
+    function.  
+  </li>
+  <li>
+    k-nearest neighbors assumes f(x) is well approximated by a locally constant function.
+  </li>
 </ul>  
 
 ### References:

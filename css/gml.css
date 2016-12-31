@@ -58,6 +58,8 @@ html, body {
  padding: 0;
 }
 
+.borderless { border: 0px; box-shadow: 0 0 0; }
+
 .tags li { display:inline; padding:0 4px; background:#EEE;}
 
 .tags ul {    list-style-type: none; margin: 0; padding: 0;}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Minimum Mean Square Error Estimator
-categories: ['Personal']
+categories: ['Automated Reasoning']
 tags: ['ml', 'regression', 'proofs']
 math: true
 ---

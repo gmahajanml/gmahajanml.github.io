@@ -1,1 +1,1 @@
-Source Code for ML Blog 
+Source Code for [personal website](https://gmahajanml.github.io/) built using [Jekyll](https://jekyllrb.com/) and [GitHub Pages](https://pages.github.com/)
