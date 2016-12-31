@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Minimum Mean Square Error Estimator
+categories: ['Personal']
+tags: ['ml', 'regression', 'proofs']
 math: true
 ---
 

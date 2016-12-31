@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Least Squares and Nearest Neighbors
+categories: ['Technical']
+tags: ['ml', 'regression']
 math: true
 ---
 The regression problem [^1] involves modeling how the expected value

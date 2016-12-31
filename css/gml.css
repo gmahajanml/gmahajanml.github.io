@@ -1,5 +1,5 @@
 html, body {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .gml-body{
@@ -58,30 +58,34 @@ html, body {
  padding: 0;
 }
 
-a:link {
+.tags li { display:inline; padding:0 4px; background:#EEE;}
+
+.tags ul {    list-style-type: none; margin: 0; padding: 0;}
+
+  a:link {
     color: #0000FF;
-}
+  }
 
-a:visited {
+  a:visited {
     color: #0000FF;
-}
+  }
 
-a:hover {
+  a:hover {
     color: #0000FF;
-}
+  }
 
-a:active {
+  a:active {
     color: #0000FF;
-}
+  }
 
-#nav-bar li{
- display: inline;
- font-size: 1.250em;
- font-weight: bold;
- line-height:1.294em;
-}
+  #nav-bar li{
+   display: inline;
+   font-size: 1.250em;
+   font-weight: bold;
+   line-height:1.294em;
+ }
 
-h1{
+ h1{
   font-size: 1.688em;
   font-weight: bold;
   line-height: 0.958em;
@@ -95,7 +99,6 @@ h2{
 
 h3{
   font-size: 1em;
-  font-weight: bold;
   line-height: 1.618em;
 }
 
