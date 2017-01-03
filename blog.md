@@ -24,7 +24,7 @@ permalink: /blog/
         {% for category in site.categories %}
         {% assign c = category | first %}
         {% assign posts = category | last %}
-        <li><a href="#{{c | replace: ' ', '-'}}" data-parent="#category-list" data-toggle="collapse">{{c}} ({{ posts | size }})</a></li>
+        <li><a href="#{{c | replace: ' ', '-'}}" data-parent="#category-list" data-toggle="collapse">{{c}}({{ posts | size }})</a></li>
         {% endfor %}
     </ul>
 
@@ -50,7 +50,7 @@ permalink: /blog/
         {% for tag in site.tags %}
         {% assign t = tag | first %}
         {% assign posts = tag | last %}
-        <li><a href="#tag-{{t | replace: ' ', '-'}}" data-parent="#tags-list" data-toggle="collapse">{{t}} ({{ posts | size }})</a></li>
+        <li><a href="#tag-{{t | replace: ' ', '-'}}" data-parent="#tags-list" data-toggle="collapse">{{t}}({{ posts | size }})</a></li>
         {% endfor %}
     </ul>
 

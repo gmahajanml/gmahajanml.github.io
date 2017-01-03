@@ -84,7 +84,7 @@ X_neg = mvnrnd(mu_neg,sigma,100);
   </div>
 </div>
 
-### Least Squares
+## Results for Least Squares
 This is how least squares performs on both scenarios.
 
 {% highlight matlab %}
@@ -119,7 +119,7 @@ param = inv(transpose(X)*X)*transpose(X)*Y;
 </div>
 
 
-### Nearest Neighbors
+## Results for Nearest Neighbors
 This is how nearest neighbors performs for k=10.
 
 {% highlight matlab %}
@@ -214,7 +214,7 @@ of model assumptions:
   </li>
 </ul>  
 
-### References:
+## References:
 [^1]: Breheny, Patrick. "Introduction to nonparametric regression: Least squares vs. Nearest neighbors". Lecture.
 
 [^2]: Hastie, Trevor, Robert Tibshirani, and J. H. Friedman. The Elements of Statistical Learning: Data Mining, Inference, and Prediction: With 200 Full-color Illustrations. New York: Springer, 2001. Print.

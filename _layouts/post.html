@@ -6,11 +6,9 @@ layout: default
 	<div>
 		{{ content }}
 	</div>
-
-	<div>
-		Written on {{ page.date | date: "%B %e, %Y" }}
-	</div>
-	{% include disqus.html %}
+  {% if page.disqus %}
+  {% include disqus.html %}
+  {% endif %}
 </div>
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/highlight-style.css">
 
@@ -18,17 +16,17 @@ layout: default
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    showProcessingMessages: false,
-    messageStyle: 'none',
-    // show equation numbers
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    'HTML-CSS': {
-      imageFont: null
-    }
-  });
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  // show equation numbers
+  TeX: {
+  equationNumbers: {
+  autoNumber: "AMS"
+}
+},
+'HTML-CSS': {
+imageFont: null
+}
+});
 </script>
 {% endif %}
