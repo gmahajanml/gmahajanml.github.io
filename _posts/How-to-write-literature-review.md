@@ -4,6 +4,7 @@ title: How to write Literature Review?
 categories: ['How to']
 tags: ['tips', 'literature review']
 math: true
+permalink: /how/literature-review
 ---
 
 'Why' and 'How' are related. 'Why' is the motivation for us trying to learn 'How' and will also help us appreciate more the 'How'.

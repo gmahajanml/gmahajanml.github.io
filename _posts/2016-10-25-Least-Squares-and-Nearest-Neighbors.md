@@ -1,47 +1,15 @@
 ---
 layout: post
-title: Least Squares and Nearest Neighbors
+title: From Least Squares to Nearest Neighbors
 categories: ['Automated Reasoning']
 tags: ['ml', 'regression']
 math: true
+starred: true
 ---
-The regression problem [^1] involves modeling how the expected value
-of a response \\(y\\) changes in response to changes in an 
-explanatory variable \\(x\\) : \\[ E(y|x) = f(x)\\]
+Let's evaluate two simple but powerful prediction methods: the [linear model
+fit by least squares]({{site.baseurl}}/what/linear-models/) and the \\(k\\)-[nearest-neighbor]({{site.baseurl}}/what/nearest-neighbors-mentods/) prediction rule on a simple [regression problem]({{site.baseurl}}/what/regression-problem/). We will see how the linear model makes huge assumptions about structure and yields stable but possibly inaccurate predictions. The method of \\(k\\)-nearest neighbors, however, makes very mild structural assumptions: its predictions are often accurate but can be unstable.
 
-Lets develop two simple but powerful prediction methods for \\( f(x)\\): the linear model
-fit by least squares and the \\(k\\)-nearest-neighbor prediction rule.
-The linear model makes huge assumptions about structure and yields stable
-but possibly inaccurate predictions. The method of \\(k\\)-nearest neighbors makes very mild structural assumptions: its predictions are often accurate
-but can be unstable.
-
-## Least Squares
-The linear model, as its name implies, assumes a linear
-relationship. Given a vector of inputs 
-\\( X^T = (X_1, X_2,\ldots,X_p)\\), we predict the output 
-\\(Y\\) via the model
-\\[ \hat{Y} = \hat{\beta_0} + \sum_{j=1}^{p}X_j\hat{\beta_j}\\]
-
-By including the constant variable \\(1\\) in \\(X\\), 
-including \\(\hat{\beta_0}\\) in the vector of coefficients 
-\\(\hat{\beta}\\), we can write the linear model in vector form as an inner product
-\\[\hat{Y} = X^T\hat{\beta}\\]
-
-To fit the linear model to a set of training data, we use the method of least squares. In this approach, we pick the coefficients \\(\beta\\)
-to minimize the residual sum of squares
-\\[ RSS(\beta) = \sum_{i=1}^{N}(y_i-x_{i}^{T}\beta)^2\\]
-
-## Nearest Neighbors
-Nearest-neighbor methods [^2] use those observations in 
-the training set \\(T\\) closest in input space to \\(x\\)
-to form \\(\hat{Y}\\) . Specifically, the \\(k\\)-nearest neighbor fit
-for \\(\hat{Y}\\) is defined as follows:
-\\[\hat{Y}(x)= \dfrac{1}{k} \sum_{x_i\in N_k(x)} y_i\\]
-
-where \\(N_k(x)\\) is the neighborhood of \\(x\\) defined by the 
-\\(k\\) closest points \\(x_i\\) in the training sample.
-
-## _From_ Least Squares _to_ Nearest Neighbors
+## Training Data
 Consider the two possible scenarios:
 
 **Scenario 1:** The training data in each class were generated from bivariate Gaussian distribution with uncorrelated components and different means.
@@ -171,21 +139,8 @@ contour(l,m,classes,[1,1]);
   </div>
 </div>
 
-## Statistical Decision Theory
-We can actually develop some theory that provides a framework for developing models such as those discussed informally so far. Let 
-\\(X\in R^P\\) denote a real valued random input vector, and \\(Y\in R\\) a real valued random output variable, with joint distribution \\(Pr(X,Y)\\).
-We seek a function \\(f(X)\\) for predicting \\(Y\\) given values of the input \\(X\\). This theory requires a _loss function_ \\(L(Y,f(X))\\) for penalizing errors in prediction, and by far the most common and convenient is _squared error loss:_ \\(L(Y,f(X))=(Y-f(X))^2\\). This leads us to a criterion for choosing \\(f\\),
-
-\begin{align\*} 
-EPE(f)& = E(Y-f(X))^2\\\\  
-& = \int(y-f(x))^2 Pr(dx,dy)
-\end{align\*}
-
-the expected (squared) prediction error. By conditioning on \\(X\\), we can write \\(EPE\\) as \\[EPE(f) = E_X E_{Y|X} ((Y-f(X))^2|X)\\]
-and we see that it suffices to minimize \\(EPE\\) pointwise:
-\\[f(x)=argmin_c E_{Y|X} ((Y-c)^2|X=x)\\]
-The solution is \\[f(x)=E(Y|X=x)\\]
-the conditional expectation, also known as the _regression_ function.
+## Conclusion
+We can actually develop some theory that provides a framework for developing models such as those discussed informally so far. As discussed in another [post]({{site.baseurl}}/proof/finding-regression-function/), for squared error loss function, the regression function is \\[f(x)=E(Y|X=x)\\]
 
 The nearest-neighbor methods attempt to directly implement this recipe using the training data. At each point \\(x\\), we might ask for the average of all those \\(y_is\\) with input \\(x_i=x\\). Since there is typically at most one observation at any point \\(x\\), we settle for 
 \\[\hat{f}(x)=Ave(y_i|x_i \in N_k(x))\\]
@@ -207,14 +162,12 @@ of model assumptions:
 <ul>
   <li>  
     Least squares assumes f(x) is well approximated by a globally linear
-    function.  
+    function. The linear decision boundary from least squares is very smooth, and apparently
+stable to fit. More suitable for scenario 1.
   </li>
   <li>
-    k-nearest neighbors assumes f(x) is well approximated by a locally constant function.
+    k-nearest neighbors assumes f(x) is well approximated by a locally constant function. Thus, it is wiggly and unstable. It however does not
+rely on any stringent assumptions about the underlying data, and can adapt
+to any situation. More suitable for scenario 2.
   </li>
-</ul>  
-
-## References:
-[^1]: Breheny, Patrick. "Introduction to nonparametric regression: Least squares vs. Nearest neighbors". Lecture.
-
-[^2]: Hastie, Trevor, Robert Tibshirani, and J. H. Friedman. The Elements of Statistical Learning: Data Mining, Inference, and Prediction: With 200 Full-color Illustrations. New York: Springer, 2001. Print.
+</ul>

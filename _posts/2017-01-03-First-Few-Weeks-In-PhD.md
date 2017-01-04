@@ -3,7 +3,7 @@ layout: post
 title: First Few Weeks in PhD
 categories: ['PhD Tips']
 tags: ['tips', 'phD']
-math: true
+starred: true
 ---
 It makes sense to plan for the first few weeks in PhD as it will help ramping up for the new life as a PhD. Following are the few tips recommended by people who went through this period:
 

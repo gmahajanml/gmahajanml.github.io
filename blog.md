@@ -4,15 +4,17 @@ title: Blog
 subtitle: ML related articles
 permalink: /blog/
 ---
-<div id="blog-description" class="row">
+
+<div class="row">
   <div class="col-md-12"> 
       <p>
-       This blog has articles on Automated Reasoning and Measure Theory.
+       This blog has articles on Automated Reasoning and Measure Theory. Few selected articles:
    </p>
-
    <ul>
        {% for post in site.posts %}
+       {% if post.starred %}
        <li> <a href="{{ site.baseurl }}{{ post.url }}"> {{post.title}}</a></li>
+       {% endif %}
        {% endfor %}
    </ul>
 </div>
@@ -68,4 +70,15 @@ permalink: /blog/
         </div>
     </div>
     {% endfor %}
+</div>
+
+## Complete List
+<div class="row">
+  <div class="col-md-12"> 
+   <ul>
+       {% for post in site.posts %}
+       <li> <a href="{{ site.baseurl }}{{ post.url }}"> {{post.title}}</a></li>
+       {% endfor %}
+   </ul>
+</div>
 </div>
