@@ -1,15 +1,41 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include meta.html %}
+</head>
+<body class="gml-body">
+  {% assign broken_content = content | split: site.page_break_regex %}
+  <div class="gml-container page" tabindex="1">
+    {% include mininavbar.html %}
+    {% include header.html %}
+    <div class="row">
+     <div class="col-md-12">
+       {{ broken_content[0] }}
+     </div>
+   </div>
+ </div>
 
-<div>
-	<div>
-		{{ content }}
-	</div>
-  {% if page.disqus %}
-  {% include disqus.html %}
-  {% endif %}
+ {% for single_page in broken_content offset: 1 %}
+ <div class="gml-container page" tabindex="{{ forloop.index | plus: 1 }}" style="margin-top: 40px;">
+  {% include mininavbar.html %}
+  <div class="row">
+   <div class="col-md-12 page">
+     {{ single_page }}
+   </div>
+ </div>
 </div>
+{% endfor %}
+
+{% if page.disqus %}
+<div class="gml-container" style="margin-top: 40px;">
+  <div class="row">
+   <div class="col-md-12">
+     {% include disqus.html %}
+   </div>
+ </div>
+</div>
+{% endif %}
+
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/highlight-style.css">
 
 {% if page.math %}
@@ -30,3 +56,26 @@ imageFont: null
 });
 </script>
 {% endif %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+ $(".page").keydown(function(event) {
+  var code = event.keyCode || event.which;
+  // on right arrow
+  if(code === 39){
+    $(this).next().focus();
+    event.preventDefault();
+  }
+
+  // on left arrow
+  if(code === 37){
+    $(this).prev().focus();
+    event.preventDefault();
+  }
+});
+
+ $(".page").first().focus();
+</script>
+</body>
+</html>

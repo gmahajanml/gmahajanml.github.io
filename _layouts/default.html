@@ -1,58 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>{% if page.title %}{{ page.title }} {% else %}{{ site.name }} {% endif %}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/gml.css">
-  <link rel="icon" type="image/png" href="{{site.baseurl}}/images/favicon.ico">
+  {% include meta.html %}
 </head>
 <body class="gml-body">
   <div class="gml-container">
-    <div id= "header" class="row">
-      <div id="name-area" class="col-md-12">
-        <div id="name">{% if page.title %}{{ page.title }} {% else %}{{ site.name }} {% endif %} </div>
-        {% if page.subtitle %}
-        <div class="name-sub">{{page.subtitle}}</div>
-        {% else %}
-        {% if page.title == null %}
-        <div class="name-sub">Ph.D. Student</div>
-        {% endif %}
-        {% endif %}
-      </div>
-    </div>
-    
-    <div id="nav-bar" class= "row">
-      <div class="col-md-12">
-        <ul>
-          <li>
-           <a href="{{ site.baseurl }}/"> Home </a>
-         </li>
-         <li class="middot">.</li>
-         <li>
-           <a href="{{ site.baseurl }}/bio"> Bio </a>
-         </li>
-         <li class="middot">.</li>
-         <li>
-           <a href="{{ site.baseurl }}/research"> Research </a>
-         </li>
-         <li class="middot">.</li>
-         <li>
-           <a href="{{ site.baseurl }}/projects"> Projects </a>
-         </li>
-         <li class="middot">.</li>
-         <li>
-           <a href="{{ site.baseurl }}/publications"> Publications </a>
-         </li> 
-         <li class="middot">.</li>
-         <li>
-           <a href="{{ site.baseurl }}/blog"> Blog </a>
-         </li>
-       </ul>
-     </div>
-   </div>
-
-   <div class="row">
+    {% unless page.noheader %}
+    {% include header.html %}
+    {% include navbar.html %}
+    {% endunless %}
+    <div class="row">
      <div class="col-md-12">
        {{ content }}
      </div>

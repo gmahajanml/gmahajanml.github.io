@@ -1,0 +1,12 @@
+<div id= "header" class="row">
+    <div id="name-area" class="col-md-12">
+        <div id="name">{% if page.title %}{{ page.title }} {% else %}{{ site.name }} {% endif %} </div>
+        {% if page.subtitle %}
+        <div class="name-sub">{{page.subtitle}}</div>
+        {% else %}
+        {% if page.title == null %}
+        <div class="name-sub">Ph.D. Student</div>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>

@@ -5,6 +5,7 @@ categories: ['Automated Reasoning']
 tags: ['ml', 'regression']
 math: true
 starred: true
+code: https://github.com/gmahajanml/linear-to-nearest
 ---
 Let's evaluate two simple but powerful prediction methods: the [linear model
 fit by least squares]({{site.baseurl}}/what/linear-models/) and the \\(k\\)-[nearest-neighbor]({{site.baseurl}}/what/nearest-neighbors-mentods/) prediction rule on a simple [regression problem]({{site.baseurl}}/what/regression-problem/). We will see how the linear model makes huge assumptions about structure and yields stable but possibly inaccurate predictions. The method of \\(k\\)-nearest neighbors, however, makes very mild structural assumptions: its predictions are often accurate but can be unstable.
@@ -16,7 +17,9 @@ Consider the two possible scenarios:
 
 **Scenario 2:** The training data in each class came from a mixture of 10 low-variance Gaussian distributions, with individual means themselves distributed as Gaussian.
 
-Let's evaluate Linear Model and Nearest Neighbors on both scenarios. We first create training data for \\(Y=1\\), denoted by \\(X_{pos}\\) and 
+page_break
+
+We first create training data for \\(Y=1\\), denoted by \\(X_{pos}\\) and 
 \\(Y=-1\\), denoted by \\(X_{neg}\\).
 
 {% highlight matlab %}
@@ -26,8 +29,6 @@ sigma = [1,1.5;1.5,3];
 X_pos = mvnrnd(mu_pos,sigma,100);
 X_neg = mvnrnd(mu_neg,sigma,100);
 {% endhighlight %}
-
-[GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
   <div class="col-md-6">
@@ -52,6 +53,8 @@ X_neg = mvnrnd(mu_neg,sigma,100);
   </div>
 </div>
 
+page_break
+
 ## Results for Least Squares
 This is how least squares performs on both scenarios.
 
@@ -60,8 +63,6 @@ X = [zeros(200,1)+1 [X_neg; X_pos]];
 Y = [zeros(100,1)-1;zeros(100,1)+1];
 param = inv(transpose(X)*X)*transpose(X)*Y;
 {% endhighlight %}
-
-[GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
   <div class="col-md-6">
@@ -86,35 +87,10 @@ param = inv(transpose(X)*X)*transpose(X)*Y;
   </div>
 </div>
 
+page_break
 
 ## Results for Nearest Neighbors
 This is how nearest neighbors performs for k=10.
-
-{% highlight matlab %}
-X = [X_neg; X_pos];
-Y = [zeros(100,1)-1;zeros(100,1)+1];
-M = size(X)(1);
-l = linspace(-10, 10, 100);
-m = linspace(-10, 10, 100);
-[X1,X2] = meshgrid(l, m);
-N = length(X1(:));
-classes = zeros(size(X1));
-for i = 1:N
-this = [X1(i) X2(i)];
-dists = sum((X - repmat(this,M,1)).^2,2);
-[d I] = sort(dists,'ascend');
-neighbors = Y(I(1:10));
-prediction = sum(neighbors);
-if prediction>0
-classes(i)=1;
-else
-classes(i)=-1;
-end
-end
-contour(l,m,classes,[1,1]);
-{% endhighlight %}
-
-[GitHub Code](https://github.com/gmahajanml/linear-to-nearest)
 
 <div class="row">
   <div class="col-md-6">
@@ -138,6 +114,8 @@ contour(l,m,classes,[1,1]);
     </div>
   </div>
 </div>
+
+page_break
 
 ## Conclusion
 We can actually develop some theory that provides a framework for developing models such as those discussed informally so far. As discussed in another [post]({{site.baseurl}}/proof/finding-regression-function/), for squared error loss function, the regression function is \\[f(x)=E(Y|X=x)\\]

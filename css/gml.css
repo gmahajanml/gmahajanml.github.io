@@ -21,6 +21,10 @@ html, body {
   border-radius: 9px;
 }
 
+.page {
+  outline:none;
+}
+
 #header{
   padding-bottom: 1em;
 }
@@ -64,30 +68,30 @@ html, body {
 
 .tags ul {    list-style-type: none; margin: 0; padding: 0;}
 
-  a:link {
-    color: #0000FF;
-  }
+a:link {
+  color: #0000FF;
+}
 
-  a:visited {
-    color: #0000FF;
-  }
+a:visited {
+  color: #0000FF;
+}
 
-  a:hover {
-    color: #0000FF;
-  }
+a:hover {
+  color: #0000FF;
+}
 
-  a:active {
-    color: #0000FF;
-  }
+a:active {
+  color: #0000FF;
+}
 
-  #nav-bar li{
-   display: inline;
-   font-size: 1.250em;
-   font-weight: bold;
-   line-height:1.294em;
- }
+#nav-bar li{
+ display: inline;
+ font-size: 1.250em;
+ font-weight: bold;
+ line-height:1.294em;
+}
 
- h1{
+h1{
   font-size: 1.688em;
   font-weight: bold;
   line-height: 0.958em;

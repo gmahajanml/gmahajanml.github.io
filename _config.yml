@@ -5,6 +5,9 @@
 # Name of your site (displayed in the header)
 name: Gaurav Mahajan
 
+# Page Break regex for posts
+page_break_regex: page_break
+
 # Short bio or description (displayed in the header)
 description: 
 

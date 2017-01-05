@@ -1,0 +1,10 @@
+<div id="mini-nav-bar" class= "row" style="padding-bottom: 20px;">
+  <div class="col-xs-6" align="left">
+       <a href="{{ site.baseurl }}/blog"> Back to Index </a>
+ </div>
+ {% if page.code %}
+ <div class="col-xs-6" align="right">
+       <a href="{{ page.code }}" target="_blank"> Link to Code </a>
+ </div>
+ {% endif %}
+</div>
